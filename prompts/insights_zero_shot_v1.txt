@@ -1,0 +1,76 @@
+Es um analista senior de retalho. Recebes apenas metricas pre-calculadas; nao inventes numeros nem facas calculos novos.
+
+DADOS:
+TRAFEGO
+Total semanal: 11051 visitantes.
+Duracao media: 15.3 min; mediana: 10.9 min.
+Dia mais movimentado: 2025-03-15; dia mais calmo: 2025-03-11; hora de pico: 17h.
+Visitantes por dia:
+- 2025-03-10: 1458 visitantes
+- 2025-03-11: 1249 visitantes
+- 2025-03-12: 1532 visitantes
+- 2025-03-13: 1599 visitantes
+- 2025-03-14: 1482 visitantes
+- 2025-03-15: 1964 visitantes
+- 2025-03-16: 1767 visitantes
+
+ZONAS MAIS VISITADAS
+- Z_C2: 17976 visitas, dwell 24.0s, paragem 79.8%
+- Z_C1: 15209 visitas, dwell 24.2s, paragem 82.3%
+- Z_C3: 9686 visitas, dwell 24.4s, paragem 85.7%
+- Z_E1: 5429 visitas, dwell 16.4s, paragem 67.7%
+- Z_E2: 5283 visitas, dwell 16.3s, paragem 67.5%
+- Z_CK: 4261 visitas, dwell 180.0s, paragem 77.3%
+- Z_N5: 2550 visitas, dwell 181.1s, paragem 82.0%
+- Z_N10: 2518 visitas, dwell 179.5s, paragem 78.2%
+- Z_N8: 2231 visitas, dwell 180.5s, paragem 82.1%
+- Z_N9: 2130 visitas, dwell 184.2s, paragem 80.7%
+
+TOP SEQUENCIAS
+[{"sequence": "Z_C2 → Z_C1", "count": 6068}, {"sequence": "Z_C2 → Z_C3", "count": 5607}, {"sequence": "Z_C1 → Z_C2", "count": 5455}, {"sequence": "Z_C1 → Z_CK", "count": 2807}, {"sequence": "Z_C2 → Z_C2", "count": 2743}, {"sequence": "Z_C3 → Z_C2", "count": 2320}, {"sequence": "Z_E1 → Z_C1", "count": 2083}, {"sequence": "Z_E2 → Z_C1", "count": 2073}, {"sequence": "Z_C1 → Z_C1", "count": 1895}, {"sequence": "Z_C1 → Z_C3", "count": 1270}]
+
+FUNIL
+Total visitantes: 11051; entradas registadas: 10712;
+chegaram a caixa: 8904 (80.6%);
+sem checkout: 2147 (19.4%).
+
+ANOMALIAS DO DIA 2025-03-16
+- Z_N1 as 13h: 17 vs media 24.3 (desvio 8.98 sigma, abaixo)
+- Z_S4 as 21h: 7 vs media 1.6 (desvio 6.04 sigma, acima)
+- Z_S6 as 21h: 5 vs media 2.2 (desvio 5.5 sigma, acima)
+- Z_S2 as 21h: 3 vs media 1.2 (desvio 4.02 sigma, acima)
+- Z_C1 as 21h: 26 vs media 13.8 (desvio 3.82 sigma, acima)
+- Z_N4 as 21h: 6 vs media 2.2 (desvio 3.47 sigma, acima)
+- Z_N1 as 14h: 32 vs media 16.0 (desvio 3.35 sigma, acima)
+- Z_N3 as 19h: 36 vs media 22.0 (desvio 3.26 sigma, acima)
+- Z_S4 as 13h: 25 vs media 14.7 (desvio 3.0 sigma, acima)
+- Z_N8 as 19h: 35 vs media 22.8 (desvio 2.95 sigma, acima)
+- Z_N3 as 21h: 4 vs media 2.4 (desvio 2.92 sigma, acima)
+- Z_N10 as 13h: 45 vs media 30.3 (desvio 2.88 sigma, acima)
+
+
+Tarefa: gera ate 10 insights acionaveis em portugues europeu.
+Regras obrigatorias:
+- Cobre as categorias trafego, zona, funil, anomalia e demografico quando houver dados.
+- Nao repitas observacoes nem recomendacoes.
+- Cada observacao deve citar numeros que aparecem nos dados.
+- Nao uses: 'pode indicar', 'possivelmente', 'melhorar o atendimento'.
+- Se nao houver evidencia suficiente para 10 insights, gera menos.
+- Responde apenas com JSON valido, sem markdown.
+
+Schema:
+{
+  "insights": [
+    {
+      "id": "INS_001",
+      "categoria": "trafego",
+      "titulo": "frase curta que resume o insight",
+      "observacao": "factos e numeros concretos dos dados",
+      "implicacao": "significado operacional direto",
+      "recomendacao": "acao concreta com quando + onde + o que fazer",
+      "urgencia": "imediata",
+      "confianca": 0.9
+    }
+  ],
+  "resumo_executivo": "- bullet 1\n- bullet 2\n- bullet 3"
+}

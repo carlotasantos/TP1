@@ -1,0 +1,151 @@
+REPORT_V2
+O LLM redige o report a partir de rascunhos factuais calculados em Python.
+Guardrail: se a resposta introduzir numeros novos, a seccao volta ao rascunho factual.
+
+============================================================
+SECCAO: RESUMO
+============================================================
+Es um consultor de retalho a escrever para um gestor de loja em portugues europeu.
+Transforma o RASCUNHO FACTUAL abaixo numa seccao clara do briefing semanal.
+
+REGRAS OBRIGATORIAS:
+- Usa apenas os factos e numeros do rascunho.
+- Nao cries numeros, percentagens, datas, horas, zonas ou causas novas.
+- Mantem linguagem simples, operacional e sem jargao tecnico desnecessario.
+- Evita termos tecnicos como "sigma" e "desvio padrao"; escreve "muito fora do habitual".
+- Nao uses markdown, nem titulo da seccao.
+- Se precisares de mencionar incerteza, escreve "hipotese operacional", nao uses "pode indicar".
+
+SECCAO: Resumo Executivo
+RASCUNHO FACTUAL:
+A loja recebeu 11051 visitantes na semana; 2025-03-15 foi o dia mais movimentado com 1964 visitantes e 2025-03-11 o mais calmo com 1249. Chegaram a caixa 8904 visitantes de um total de 11051, uma conversao de 80.6%. A anomalia mais forte ocorreu em Z_N1 as 13h, com 17 visitantes contra media de 24.3.
+
+Escreve apenas o texto final da seccao:
+
+============================================================
+SECCAO: TRAFEGO
+============================================================
+Es um consultor de retalho a escrever para um gestor de loja em portugues europeu.
+Transforma o RASCUNHO FACTUAL abaixo numa seccao clara do briefing semanal.
+
+REGRAS OBRIGATORIAS:
+- Usa apenas os factos e numeros do rascunho.
+- Nao cries numeros, percentagens, datas, horas, zonas ou causas novas.
+- Mantem linguagem simples, operacional e sem jargao tecnico desnecessario.
+- Evita termos tecnicos como "sigma" e "desvio padrao"; escreve "muito fora do habitual".
+- Nao uses markdown, nem titulo da seccao.
+- Se precisares de mencionar incerteza, escreve "hipotese operacional", nao uses "pode indicar".
+
+SECCAO: Performance de Trafego
+RASCUNHO FACTUAL:
+A afluencia semanal foi de 11051 visitantes. O dia mais movimentado foi 2025-03-15, com 1964 visitantes, e o dia mais calmo foi 2025-03-11, com 1249 visitantes.
+
+A hora de pico da semana foi as 17h. A duracao media de visita foi 15.3 minutos, com mediana de 10.9 minutos.
+
+Para staffing, o foco operacional deve estar no dia 2025-03-15 e no bloco em torno das 17h, evitando colocar reposicao, pausas longas ou tarefas administrativas nesse periodo.
+
+Escreve apenas o texto final da seccao:
+
+============================================================
+SECCAO: ZONAS
+============================================================
+Es um consultor de retalho a escrever para um gestor de loja em portugues europeu.
+Transforma o RASCUNHO FACTUAL abaixo numa seccao clara do briefing semanal.
+
+REGRAS OBRIGATORIAS:
+- Usa apenas os factos e numeros do rascunho.
+- Nao cries numeros, percentagens, datas, horas, zonas ou causas novas.
+- Mantem linguagem simples, operacional e sem jargao tecnico desnecessario.
+- Evita termos tecnicos como "sigma" e "desvio padrao"; escreve "muito fora do habitual".
+- Nao uses markdown, nem titulo da seccao.
+- Se precisares de mencionar incerteza, escreve "hipotese operacional", nao uses "pode indicar".
+
+SECCAO: Analise de Zonas
+RASCUNHO FACTUAL:
+As tres zonas com melhor performance combinada de paragem e permanencia foram Z_S2 (591 visitas, dwell 193.6s, paragem 93.2%); Z_S1 (1085 visitas, dwell 185.9s, paragem 89.8%); Z_S7 (748 visitas, dwell 187.1s, paragem 89.6%). Estas zonas merecem manter boa exposicao de produto porque ja conseguem prender a atencao dos clientes.
+
+A zona com maior volume foi Z_C2, com 17976 visitas. A zona com menor volume foi Z_S2, com 591 visitas; deve ser analisada fisicamente para perceber se o problema e localizacao, sinalizacao ou sortido.
+
+As zonas com menor alcance foram Z_S2 (551 visitantes, alcance 5.0%); Z_S7 (677 visitantes, alcance 6.1%); Z_S6 (786 visitantes, alcance 7.1%). A recomendacao e criar ligacoes visuais a partir das zonas mais visitadas e testar uma promocao simples nestes pontos.
+
+A sequencia mais frequente foi Z_C2 → Z_C1, com 6068 ocorrencias. Este percurso deve ser usado para decidir onde colocar comunicacao e onde evitar obstaculos.
+
+Escreve apenas o texto final da seccao:
+
+============================================================
+SECCAO: FUNIL
+============================================================
+Es um consultor de retalho a escrever para um gestor de loja em portugues europeu.
+Transforma o RASCUNHO FACTUAL abaixo numa seccao clara do briefing semanal.
+
+REGRAS OBRIGATORIAS:
+- Usa apenas os factos e numeros do rascunho.
+- Nao cries numeros, percentagens, datas, horas, zonas ou causas novas.
+- Mantem linguagem simples, operacional e sem jargao tecnico desnecessario.
+- Evita termos tecnicos como "sigma" e "desvio padrao"; escreve "muito fora do habitual".
+- Nao uses markdown, nem titulo da seccao.
+- Se precisares de mencionar incerteza, escreve "hipotese operacional", nao uses "pode indicar".
+
+SECCAO: Funil de Clientes
+RASCUNHO FACTUAL:
+No funil, ha 11051 visitantes unicos, 10712 com passagem registada em zonas de entrada e 8904 que chegaram a caixa. A taxa de conversao para caixa e 80.6%.
+
+Ficaram sem chegar a caixa 2147 visitantes. As zonas com menor alcance no percurso sao Z_S2, Z_S7, Z_S6, pelo que a perda de trafego deve ser observada sobretudo nesses pontos.
+
+No grupo sem checkout, a faixa etaria mais frequente e adult, com 502 pessoas. A distribuicao de genero nesse grupo e M=1096 e F=1051.
+
+A acao recomendada e observar estes visitantes nas zonas de menor alcance e testar sinalizacao direta para caixa e produtos de decisao rapida antes da hora de pico.
+
+Escreve apenas o texto final da seccao:
+
+============================================================
+SECCAO: ANOMALIAS
+============================================================
+Es um consultor de retalho a escrever para um gestor de loja em portugues europeu.
+Transforma o RASCUNHO FACTUAL abaixo numa seccao clara do briefing semanal.
+
+REGRAS OBRIGATORIAS:
+- Usa apenas os factos e numeros do rascunho.
+- Nao cries numeros, percentagens, datas, horas, zonas ou causas novas.
+- Mantem linguagem simples, operacional e sem jargao tecnico desnecessario.
+- Evita termos tecnicos como "sigma" e "desvio padrao"; escreve "muito fora do habitual".
+- Nao uses markdown, nem titulo da seccao.
+- Se precisares de mencionar incerteza, escreve "hipotese operacional", nao uses "pode indicar".
+
+SECCAO: Anomalias da Semana
+RASCUNHO FACTUAL:
+Em Z_N1 as 13h, o dia analisado registou 17 visitantes contra uma media de 24.3. O valor ficou abaixo do padrao historico, com magnitude calculada de 8.98. A causa mais provavel a verificar e obstrucao, reposicao ou falha de sensor; a acao e inspecionar a zona antes da abertura seguinte e confirmar a leitura do sensor nesse horario.
+
+Em Z_S4 as 21h, o dia analisado registou 7 visitantes contra uma media de 1.6. O valor ficou acima do padrao historico, com magnitude calculada de 6.04. A causa mais provavel a verificar e promocao local, concentracao de fila ou evento pontual; a acao e inspecionar a zona antes da abertura seguinte e confirmar a leitura do sensor nesse horario.
+
+Em Z_S6 as 21h, o dia analisado registou 5 visitantes contra uma media de 2.2. O valor ficou acima do padrao historico, com magnitude calculada de 5.5. A causa mais provavel a verificar e promocao local, concentracao de fila ou evento pontual; a acao e inspecionar a zona antes da abertura seguinte e confirmar a leitura do sensor nesse horario.
+
+Em Z_S2 as 21h, o dia analisado registou 3 visitantes contra uma media de 1.2. O valor ficou acima do padrao historico, com magnitude calculada de 4.02. A causa mais provavel a verificar e promocao local, concentracao de fila ou evento pontual; a acao e inspecionar a zona antes da abertura seguinte e confirmar a leitura do sensor nesse horario.
+
+Em Z_C1 as 21h, o dia analisado registou 26 visitantes contra uma media de 13.8. O valor ficou acima do padrao historico, com magnitude calculada de 3.82. A causa mais provavel a verificar e promocao local, concentracao de fila ou evento pontual; a acao e inspecionar a zona antes da abertura seguinte e confirmar a leitura do sensor nesse horario.
+
+Escreve apenas o texto final da seccao:
+
+============================================================
+SECCAO: RECOMENDACOES
+============================================================
+Es um consultor de retalho a escrever para um gestor de loja em portugues europeu.
+Transforma o RASCUNHO FACTUAL abaixo numa seccao clara do briefing semanal.
+
+REGRAS OBRIGATORIAS:
+- Usa apenas os factos e numeros do rascunho.
+- Nao cries numeros, percentagens, datas, horas, zonas ou causas novas.
+- Mantem linguagem simples, operacional e sem jargao tecnico desnecessario.
+- Evita termos tecnicos como "sigma" e "desvio padrao"; escreve "muito fora do habitual".
+- Nao uses markdown, nem titulo da seccao.
+- Se precisares de mencionar incerteza, escreve "hipotese operacional", nao uses "pode indicar".
+
+SECCAO: Recomendacoes para a Proxima Semana
+RASCUNHO FACTUAL:
+1. [imediata] Antes da abertura seguinte, verificar fisicamente Z_N1 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 13h.
+2. [imediata] Antes da abertura seguinte, verificar fisicamente Z_S4 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 21h.
+3. [imediata] Antes da abertura seguinte, verificar fisicamente Z_S6 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 21h.
+4. [imediata] Antes da abertura seguinte, verificar fisicamente Z_S2 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 21h.
+5. [imediata] Antes da abertura seguinte, verificar fisicamente Z_C1 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 21h.
+
+Escreve apenas o texto final da seccao:

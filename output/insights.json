@@ -1,0 +1,148 @@
+{
+  "modelo": "llama3.1:8b",
+  "temperatura": 0.0,
+  "estrategia_usada": "B_few_shot_validada",
+  "validacao_pos_llm": {
+    "fonte_factual": "metrics.json",
+    "regras": [
+      "deduplicacao",
+      "remocao de frases vagas",
+      "ancoras calculadas em Python",
+      "anomalias top por sigma"
+    ]
+  },
+  "insights": [
+    {
+      "id": "INS_001",
+      "categoria": "trafego",
+      "titulo": "Pico semanal em 2025-03-15 com 1964 visitantes",
+      "observacao": "A loja recebeu 11051 visitantes na semana; 2025-03-15 teve 1964 visitantes e 2025-03-11 teve 1249.",
+      "implicacao": "A equipa deve concentrar capacidade no dia de maior afluencia e reduzir tarefas de backoffice nesse periodo.",
+      "recomendacao": "Na proxima semana, reforcar staff no dia equivalente a 2025-03-15 e preparar pausas fora da hora de pico das 17h.",
+      "urgencia": "esta_semana",
+      "confianca": 0.92
+    },
+    {
+      "id": "INS_002",
+      "categoria": "zona",
+      "titulo": "Z_C2 concentra o maior volume de visitas",
+      "observacao": "Z_C2 registou 17976 visitas, enquanto Z_S2 teve o maior dwell medio (193.6s). A zona de menor alcance foi Z_S2 com 5.0%.",
+      "implicacao": "Ha zonas de passagem muito fortes e zonas profundas com alcance baixo, o que cria oportunidades de reposicionamento.",
+      "recomendacao": "Esta semana, colocar sinalizacao desde Z_C2 para Z_S2 e testar uma promocao de entrada nessa zona.",
+      "urgencia": "esta_semana",
+      "confianca": 0.9
+    },
+    {
+      "id": "INS_003",
+      "categoria": "zona",
+      "titulo": "Desequilibrio entre caixas: Z_C2 acima de Z_CK",
+      "observacao": "Z_C2 teve 17976 visitas e Z_CK teve 4261; a sequencia mais frequente foi Z_C2 → Z_C1 com 6068 ocorrencias.",
+      "implicacao": "O fluxo nas caixas nao esta distribuido de forma uniforme, aumentando risco de fila numa zona especifica.",
+      "recomendacao": "Durante a hora de pico, orientar clientes de Z_C2 para Z_CK quando a fila principal aumentar.",
+      "urgencia": "esta_semana",
+      "confianca": 0.88
+    },
+    {
+      "id": "INS_004",
+      "categoria": "funil",
+      "titulo": "80.6% dos visitantes chegaram a caixa",
+      "observacao": "Dos 11051 visitantes, 10712 passaram por entradas registadas e 8904 chegaram a caixa; 2147 nao chegaram (19.4%).",
+      "implicacao": "O funil converte a maioria dos visitantes, mas ainda ha perda mensuravel antes do checkout.",
+      "recomendacao": "Esta semana, observar os percursos dos visitantes sem checkout e testar sinalizacao para caixas nas zonas de menor alcance.",
+      "urgencia": "esta_semana",
+      "confianca": 0.94
+    },
+    {
+      "id": "INS_005",
+      "categoria": "demografico",
+      "titulo": "Perfil sem checkout dominado por adult",
+      "observacao": "Entre os 2147 visitantes sem checkout, a faixa adult representa 502 pessoas; a distribuicao de genero e M=1096 e F=1051.",
+      "implicacao": "A perda antes da caixa tem um perfil identificavel e deve ser tratada com a oferta e comunicacao dessa faixa.",
+      "recomendacao": "Na proxima semana, rever mensagens promocionais para adult nas zonas de menor alcance antes das horas de pico.",
+      "urgencia": "proximo_mes",
+      "confianca": 0.84
+    },
+    {
+      "id": "INS_006",
+      "categoria": "anomalia",
+      "titulo": "Anomalia em Z_N1 as 13h",
+      "observacao": "No dia 2025-03-16, Z_N1 as 13h teve 17 visitantes contra media de 24.3 (desvio 8.98 sigma, abaixo).",
+      "implicacao": "Esta queda esta fora do padrao historico dos primeiros 6 dias e exige verificacao operacional.",
+      "recomendacao": "Antes da abertura seguinte, verificar fisicamente Z_N1 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 13h.",
+      "urgencia": "imediata",
+      "confianca": 0.99
+    },
+    {
+      "id": "INS_007",
+      "categoria": "anomalia",
+      "titulo": "Anomalia em Z_S4 as 21h",
+      "observacao": "No dia 2025-03-16, Z_S4 as 21h teve 7 visitantes contra media de 1.6 (desvio 6.04 sigma, acima).",
+      "implicacao": "Esta pico esta fora do padrao historico dos primeiros 6 dias e exige verificacao operacional.",
+      "recomendacao": "Antes da abertura seguinte, verificar fisicamente Z_S4 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 21h.",
+      "urgencia": "imediata",
+      "confianca": 0.9
+    },
+    {
+      "id": "INS_008",
+      "categoria": "anomalia",
+      "titulo": "Anomalia em Z_S6 as 21h",
+      "observacao": "No dia 2025-03-16, Z_S6 as 21h teve 5 visitantes contra media de 2.2 (desvio 5.5 sigma, acima).",
+      "implicacao": "Esta pico esta fora do padrao historico dos primeiros 6 dias e exige verificacao operacional.",
+      "recomendacao": "Antes da abertura seguinte, verificar fisicamente Z_S6 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 21h.",
+      "urgencia": "imediata",
+      "confianca": 0.88
+    },
+    {
+      "id": "INS_009",
+      "categoria": "anomalia",
+      "titulo": "Anomalia em Z_S2 as 21h",
+      "observacao": "No dia 2025-03-16, Z_S2 as 21h teve 3 visitantes contra media de 1.2 (desvio 4.02 sigma, acima).",
+      "implicacao": "Esta pico esta fora do padrao historico dos primeiros 6 dias e exige verificacao operacional.",
+      "recomendacao": "Antes da abertura seguinte, verificar fisicamente Z_S2 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 21h.",
+      "urgencia": "imediata",
+      "confianca": 0.83
+    },
+    {
+      "id": "INS_010",
+      "categoria": "anomalia",
+      "titulo": "Anomalia em Z_C1 as 21h",
+      "observacao": "No dia 2025-03-16, Z_C1 as 21h teve 26 visitantes contra media de 13.8 (desvio 3.82 sigma, acima).",
+      "implicacao": "Esta pico esta fora do padrao historico dos primeiros 6 dias e exige verificacao operacional.",
+      "recomendacao": "Antes da abertura seguinte, verificar fisicamente Z_C1 e confirmar sensor, obstrucao, reposicao ou sinalizacao no horario das 21h.",
+      "urgencia": "imediata",
+      "confianca": 0.83
+    }
+  ],
+  "resumo_executivo": "- Anomalia em Z_N1 as 13h: No dia 2025-03-16, Z_N1 as 13h teve 17 visitantes contra media de 24.3 (desvio 8.98 sigma, abaixo).\n- 80.6% dos visitantes chegaram a caixa: Dos 11051 visitantes, 10712 passaram por entradas registadas e 8904 chegaram a caixa; 2147 nao chegaram (19.4%).\n- Pico semanal em 2025-03-15 com 1964 visitantes: A loja recebeu 11051 visitantes na semana; 2025-03-15 teve 1964 visitantes e 2025-03-11 teve 1249.",
+  "comparacao_estrategias": {
+    "estrategia_A_zero_shot": {
+      "n_insights": 10,
+      "cobertura_categorias": [
+        "anomalia",
+        "funil",
+        "trafego",
+        "zona"
+      ],
+      "duplicados_pct": 0.0,
+      "frases_proibidas_pct": 100.0,
+      "observacoes_com_2_numeros_pct": 60.0,
+      "score": 62.0
+    },
+    "estrategia_B_few_shot": {
+      "n_insights": 10,
+      "cobertura_categorias": [
+        "anomalia",
+        "demografico",
+        "funil",
+        "trafego",
+        "zona"
+      ],
+      "duplicados_pct": 0.0,
+      "frases_proibidas_pct": 100.0,
+      "observacoes_com_2_numeros_pct": 70.0,
+      "score": 66.5
+    },
+    "vencedor": "B (few-shot)",
+    "nota": "Score = numeros na observacao, penalizacao por duplicados e penalizacao por frases vagas proibidas."
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "seed": 42,
+  "dataset_original": "data/events.csv",
+  "dataset_validacao": "data/events_validation.csv",
+  "total_anomalias": 3,
+  "anomalias": [
+    {
+      "id": "ANO_001",
+      "tipo": "zona_fantasma",
+      "descricao": "Z_N1 às 10h do domingo — corredor quase vazio",
+      "zona": "Z_N1",
+      "data": "2025-03-16",
+      "hora": 10,
+      "operacao": "remover_percentagem",
+      "percentagem_remover": 0.9,
+      "baseline_media": 43.7,
+      "baseline_std": 4.2,
+      "impacto_esperado": "queda de ~35 para ~3 eventos — desvio de 9.73sigma detectável pelo analytics.py",
+      "resultado_injecao": {
+        "anomaly_id": "ANO_001",
+        "eventos_originais": 35,
+        "eventos_removidos": 31,
+        "eventos_restantes": 4
+      },
+      "verificacao": {
+        "ANO_001": {
+          "original": 35,
+          "modificado": 4,
+          "reducao_pct": 88.6,
+          "injectado": true
+        }
+      }
+    },
+    {
+      "id": "ANO_002",
+      "tipo": "pico_anormal",
+      "descricao": "Z_S5 às 14h do domingo — secção com tráfego triplicado",
+      "zona": "Z_S5",
+      "data": "2025-03-16",
+      "hora": 14,
+      "operacao": "duplicar_eventos",
+      "fator_multiplicacao": 3,
+      "baseline_media": 51.0,
+      "baseline_std": 20.4,
+      "impacto_esperado": "subida de ~86 para ~258 eventos — desvio de 10.13sigma detectável pelo analytics.py",
+      "resultado_injecao": {
+        "anomaly_id": "ANO_002",
+        "eventos_originais": 86,
+        "eventos_adicionados": 172,
+        "eventos_totais": 258,
+        "fator_multiplicacao": 3
+      },
+      "verificacao": {
+        "ANO_002": {
+          "original": 86,
+          "modificado": 258,
+          "aumento_pct": 200.0,
+          "injectado": true
+        }
+      }
+    },
+    {
+      "id": "ANO_003",
+      "tipo": "corredor_bloqueado",
+      "descricao": "Z_N7 às 11h e 12h do domingo — corredor bloqueado durante 2 horas",
+      "zona": "Z_N7",
+      "data": "2025-03-16",
+      "horas": [
+        11,
+        12
+      ],
+      "operacao": "remover_percentagem",
+      "percentagem_remover": 0.95,
+      "baseline_media_11h": 68.2,
+      "baseline_media_12h": 74.8,
+      "baseline_std_11h": 22.1,
+      "baseline_std_12h": 13.6,
+      "impacto_esperado": "queda de ~76 para ~4 eventos em cada hora — 2 horas consecutivas detectável",
+      "resultado_injecao": {
+        "anomaly_id": "ANO_003",
+        "horas_afectadas": [
+          11,
+          12
+        ],
+        "detalhe_por_hora": [
+          {
+            "hora": 11,
+            "eventos_originais": 76,
+            "eventos_removidos": 72,
+            "eventos_restantes": 4
+          },
+          {
+            "hora": 12,
+            "eventos_originais": 76,
+            "eventos_removidos": 72,
+            "eventos_restantes": 4
+          }
+        ]
+      },
+      "verificacao": {
+        "ANO_003_h11": {
+          "original": 76,
+          "modificado": 4,
+          "reducao_pct": 94.7,
+          "injectado": true
+        },
+        "ANO_003_h12": {
+          "original": 76,
+          "modificado": 4,
+          "reducao_pct": 94.7,
+          "injectado": true
+        }
+      }
+    }
+  ],
+  "instrucoes_avaliacao": "Para cada anomalia, verificar se o insights.json contém pelo menos 1 insight de categoria 'anomalia' que mencione a zona e hora correctas. ANO_001: Z_N1 + 10h + 2025-03-16. ANO_002: Z_S5 + 14h + 2025-03-16. ANO_003: Z_N7 + 11h ou 12h + 2025-03-16."
+}

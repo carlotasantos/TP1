@@ -1,0 +1,75 @@
+{
+  "dataset": "data\\events_validation.csv",
+  "pipeline_status": "OK",
+  "phase1": {
+    "consistency_pct": 100.0,
+    "trajectories_with_overlap": 0,
+    "coverage_pct": 100.0,
+    "attributed_events": 250000,
+    "total_events": 250012,
+    "completeness_pct": 51.17,
+    "complete_trajectories": 5658,
+    "total_trajectories": 11057,
+    "gap_stats": {
+      "mean_s": 40.6,
+      "median_s": 24.0,
+      "p95_s": 149.0,
+      "max_s": 300.0,
+      "pct_over_300s": 0.0,
+      "pct_negative": 0.0
+    }
+  },
+  "phase2": {
+    "numerical_precision_pct": 72.6,
+    "total_insight_numbers": 62,
+    "verified_insight_numbers": 45,
+    "hallucination_absence_pct": 89.5,
+    "total_report_numbers": 57,
+    "verified_report_numbers": 51,
+    "anomaly_detection_pct": {
+      "pct": 75.0,
+      "detectadas": 3,
+      "total": 4,
+      "detalhes": [
+        {
+          "anomaly_id": "ANO_001",
+          "zona": "Z_N1",
+          "hora": 10,
+          "detectada": true,
+          "zona_mencionada": true,
+          "hora_mencionada": true
+        },
+        {
+          "anomaly_id": "ANO_002",
+          "zona": "Z_S5",
+          "hora": 14,
+          "detectada": true,
+          "zona_mencionada": true,
+          "hora_mencionada": true
+        },
+        {
+          "anomaly_id": "ANO_003",
+          "zona": "Z_N7",
+          "hora": 11,
+          "detectada": false,
+          "zona_mencionada": true,
+          "hora_mencionada": false
+        },
+        {
+          "anomaly_id": "ANO_003",
+          "zona": "Z_N7",
+          "hora": 12,
+          "detectada": true,
+          "zona_mencionada": true,
+          "hora_mencionada": true
+        }
+      ]
+    }
+  },
+  "output_files": {
+    "journeys": "C:\\Users\\carlo\\AppData\\Local\\Temp\\evaluate_09y789fv\\journeys.csv",
+    "metrics": "C:\\Users\\carlo\\AppData\\Local\\Temp\\evaluate_09y789fv\\metrics.json",
+    "insights": "C:\\Users\\carlo\\AppData\\Local\\Temp\\evaluate_09y789fv\\insights.json",
+    "report": "C:\\Users\\carlo\\AppData\\Local\\Temp\\evaluate_09y789fv\\weekly_report.md"
+  }
+}
